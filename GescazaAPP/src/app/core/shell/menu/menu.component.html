@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/"><fa-icon [icon]='faHome'></fa-icon></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="menu collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]= "{'disabled': isAutenticado}" routerLink="about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]= "{'disabled': isAutenticado}" routerLink="partidos">Partidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]= "{'disabled': isAutenticado}" routerLink="pruebas">Pruebas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" routerLink="#">Disabled</a>
+      </li>
+    </ul>
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalAutenticacion">
+      Login
+    </button>
+  </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modalAutenticacion" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-danger">Autenticación Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput text-primary">Usuario:</label>
+                  <input type="text" class="form-control" [(ngModel)]="user" name="usuario" placeholder="mpramun">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2 text-primary">Password:</label>
+                  <input type="password" class="form-control" [(ngModel)]="passwd" name="contraseña" placeholder="examen" >
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <!-- <p>{{ user }}</p>
+              <p>{{ passwd }}</p> -->
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='autenticar()'>Autenticar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</nav>
