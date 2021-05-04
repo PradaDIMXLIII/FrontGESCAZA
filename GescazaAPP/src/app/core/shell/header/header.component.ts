@@ -4,16 +4,19 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [`.jumbotron {
+  styles: [`
+  .jumbotron {
     padding: 5px;
     margin: 1px;
     background-image: url('./assets/lobo.jpg');
+    background-color: transparent;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: contain;
   }
 
-  img {
+  div a img {
+    background-color: inherit;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -32,6 +35,7 @@ import { environment } from 'src/environments/environment';
 
   p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
   }`
   ]
 })
